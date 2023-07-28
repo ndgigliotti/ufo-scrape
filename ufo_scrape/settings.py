@@ -7,10 +7,9 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-from pathlib import PurePath
 from os import makedirs
-from os.path import join, dirname, abspath
-
+from os.path import abspath, dirname, join
+from pathlib import PurePath
 
 BOT_NAME = "ufo_scrape"
 
@@ -67,9 +66,10 @@ TELNETCONSOLE_ENABLED = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    "ufo_scrape.pipelines.UfoScrapePipeline": 300,
-# }
+ITEM_PIPELINES = {
+    "ufo_scrape.pipelines.NullConverter": 100,
+    "ufo_scrape.pipelines.IdGenerator": 200,
+}
 
 DOWNLOADS_DIR = join(dirname(dirname(abspath(__file__))), "downloads")
 makedirs(DOWNLOADS_DIR, exist_ok=True)
@@ -104,7 +104,7 @@ AUTOTHROTTLE_TARGET_CONCURRENCY = 3.0
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 HTTPCACHE_ENABLED = False
-HTTPCACHE_EXPIRATION_SECS = 0
+HTTPCACHE_EXPIRATION_SECS = 3600
 HTTPCACHE_DIR = "httpcache"
 HTTPCACHE_IGNORE_HTTP_CODES = []
 HTTPCACHE_STORAGE = "scrapy.extensions.httpcache.FilesystemCacheStorage"
@@ -115,4 +115,4 @@ REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
-LOG_LEVEL = "INFO"
+LOG_LEVEL = "DEBUG"

@@ -46,7 +46,7 @@ By default, the scraped data is exported as a JSONlines file named with the curr
 
 ## Spider Details
 
-The spider navigates through the NUFORC website using the sitemap. It follows links to individual report pages, each of which contains a table of sighting reports. The spider uses Pandas to parse these tables into dataframes, converts the column names to snake case, adds the URL of the page and the year and month of the report to each row, and then yields the rows as dictionaries of data.
+The spider navigates through the NUFORC website using the [reports indexed by event date page](https://nuforc.org/webreports/ndxevent.html). It follows links to monthly report pages, each of which contains a table of sighting reports. The spider uses Pandas to parse these tables into dataframes, converts the column names to snake case, adds the URL of the page and the year and month of the report to each row, and then yields the rows as dictionaries of data.
 
 ## Project Structure
 
