@@ -1,0 +1,12 @@
+# C:\Users\ndgig\Repositories\ufo_scrape\ufo_scrape\items.py: 6
+# C:\Users\ndgig\Repositories\ufo_scrape\ufo_scrape\middlewares.py: 6
+# C:\Users\ndgig\Repositories\ufo_scrape\ufo_scrape\spiders\nuforc.py: 1
+Scrapy == 2.8.0
+
+# C:\Users\ndgig\Repositories\ufo_scrape\ufo_scrape\middlewares.py: 9
+# C:\Users\ndgig\Repositories\ufo_scrape\ufo_scrape\pipelines.py: 8
+itemadapter == 0.7.0
+
+# C:\Users\ndgig\Repositories\ufo_scrape\notebooks\explore.ipynb: 1
+# C:\Users\ndgig\Repositories\ufo_scrape\ufo_scrape\spiders\nuforc.py: 3
+pandas == 1.5.3

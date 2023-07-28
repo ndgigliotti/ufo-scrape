@@ -76,7 +76,7 @@ makedirs(DOWNLOADS_DIR, exist_ok=True)
 DOWNLOADS_URI = PurePath(DOWNLOADS_DIR).as_uri()
 
 FEEDS = {
-    f"{DOWNLOADS_URI}/%(name)s/%(time)s.json": {
+    f"{DOWNLOADS_URI}/%(name)s/%(time)s.jsonl": {
         "format": "jsonlines",
         "encoding": "utf8",
         "store_empty": False,
@@ -90,7 +90,7 @@ FEED_URI_PARAMS = "ufo_scrape.utils.uri_params"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
-AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = False
 # The initial download delay
 AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
@@ -103,7 +103,7 @@ AUTOTHROTTLE_TARGET_CONCURRENCY = 3.0
 
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
-HTTPCACHE_ENABLED = True
+HTTPCACHE_ENABLED = False
 HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = "httpcache"
 HTTPCACHE_IGNORE_HTTP_CODES = []
